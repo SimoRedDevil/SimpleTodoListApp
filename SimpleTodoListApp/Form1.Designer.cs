@@ -42,6 +42,7 @@
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -106,6 +107,8 @@
             this.lvData.TabIndex = 1;
             this.lvData.UseCompatibleStateImageBehavior = false;
             this.lvData.View = System.Windows.Forms.View.Details;
+            this.lvData.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lvData_ItemCheck);
+            this.lvData.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvData_ItemChecked);
             // 
             // columnHeader1
             // 
@@ -139,31 +142,43 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem,
             this.modifyToolStripMenuItem,
-            this.removeToolStripMenuItem});
+            this.removeToolStripMenuItem,
+            this.refreshToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(124, 92);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // modifyToolStripMenuItem
             // 
             this.modifyToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.modifyToolStripMenuItem.Text = "Modify";
+            this.modifyToolStripMenuItem.Click += new System.EventHandler(this.modifyToolStripMenuItem_Click);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -201,6 +216,7 @@
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modifyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
     }
 }
 

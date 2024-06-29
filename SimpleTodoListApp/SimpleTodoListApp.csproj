@@ -46,16 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAddTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddTask.Designer.cs">
+      <DependentUpon>FrmAddTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModifyTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifyTask.Designer.cs">
+      <DependentUpon>FrmModifyTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddTask.resx">
+      <DependentUpon>FrmAddTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifyTask.resx">
+      <DependentUpon>FrmModifyTask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
