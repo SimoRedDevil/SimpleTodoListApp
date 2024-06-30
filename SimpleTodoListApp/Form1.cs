@@ -23,9 +23,8 @@ namespace SimpleTodoListApp
             lvData.IsAccessible = true;
         }
 
-        private void refreshLV()
+        private void refreshLV(DataTable dt)
         {
-            DataTable dt = DA.selectData("SELECT * FROM TBL");
             lvData.Items.Clear();
             foreach (DataRow dr in dt.Rows)
             {
@@ -58,7 +57,7 @@ namespace SimpleTodoListApp
                     frmModifyTask.ID = int.Parse(item.ToolTipText);
                     frmModifyTask.ShowDialog();
                 }
-                refreshLV();
+                refreshLV(DA.selectData("SELECT * FROM TBL"));
             }
         }
 
@@ -68,13 +67,13 @@ namespace SimpleTodoListApp
             {
                 foreach (ListViewItem item in lvData.SelectedItems)
                     DA.executeCommand("DELETE FROM TBL WHERE ID=" + item.ToolTipText, null);
-                refreshLV();
+                refreshLV(DA.selectData("SELECT * FROM TBL"));
             }
         }
 
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            refreshLV();
+            refreshLV(DA.selectData("SELECT * FROM TBL"));
         }
 
         private void lvData_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -95,6 +94,12 @@ namespace SimpleTodoListApp
         private void lvData_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            DataTable dt = DA.selectData($"SELECT * FROM TBL WHERE Name LIKE '%{txtSearch.Text}%'");
+            refreshLV(dt);
         }
     }
 }
